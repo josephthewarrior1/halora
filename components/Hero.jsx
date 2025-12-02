@@ -1,53 +1,103 @@
 'use client'
-import { assets } from '@/assets/assets'
 import { ArrowRightIcon, ChevronRightIcon } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
 import CategoriesMarquee from './CategoriesMarquee'
+import { assets } from "@/assets/assets"
 
 const Hero = () => {
 
-    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '$'
+    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || 'Rp'
 
     return (
         <div className='mx-6'>
             <div className='flex max-xl:flex-col gap-8 max-w-7xl mx-auto my-10'>
-                <div className='relative flex-1 flex flex-col bg-green-200 rounded-3xl xl:min-h-100 group'>
+                
+                {/* LEFT MAIN BEAUTY BANNER */}
+                <div className='relative flex-1 flex flex-col bg-pink-200 rounded-3xl xl:min-h-[420px] group overflow-hidden'>
                     <div className='p-5 sm:p-16'>
-                        <div className='inline-flex items-center gap-3 bg-green-300 text-green-600 pr-4 p-1 rounded-full text-xs sm:text-sm'>
-                            <span className='bg-green-600 px-3 py-1 max-sm:ml-1 rounded-full text-white text-xs'>NEWS</span> Free Shipping on Orders Above $50! <ChevronRightIcon className='group-hover:ml-2 transition-all' size={16} />
+                        <div className='inline-flex items-center gap-3 bg-pink-300 text-pink-600 pr-4 p-1 rounded-full text-xs sm:text-sm'>
+                            <span className='bg-pink-600 px-3 py-1 max-sm:ml-1 rounded-full text-white text-xs'>
+                                NEW
+                            </span>
+                            Halal Beauty Collection
+                            <ChevronRightIcon className='group-hover:ml-2 transition-all' size={16} />
                         </div>
-                        <h2 className='text-3xl sm:text-5xl leading-[1.2] my-3 font-medium bg-gradient-to-r from-slate-600 to-[#A0FF74] bg-clip-text text-transparent max-w-xs  sm:max-w-md'>
-                            Gadgets you'll love. Prices you'll trust.
+
+                        <h2 className='text-3xl sm:text-5xl leading-[1.2] my-4 font-semibold bg-gradient-to-r from-[#8C2155] to-[#FF5F88] bg-clip-text text-transparent max-w-sm sm:max-w-md'>
+                            Glow Up With Halal Skincare ✨
                         </h2>
-                        <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
-                            <p>Starts from</p>
-                            <p className='text-3xl'>{currency}4.90</p>
-                        </div>
-                        <button className='bg-slate-800 text-white text-sm py-2.5 px-7 sm:py-5 sm:px-12 mt-4 sm:mt-10 rounded-md hover:bg-slate-900 hover:scale-103 active:scale-95 transition'>LEARN MORE</button>
+
+                        <p className='text-slate-800 text-sm mt-4 sm:mt-6 max-w-sm'>
+                            Produk halal aman untuk kulitmu setiap hari. Mulai dari hanya
+                        </p>
+
+                        <p className='text-3xl font-bold mt-1'>
+                            {currency} 19.000
+                        </p>
+
+                        <button className='bg-[#8C2155] text-white text-sm py-3 px-8 sm:py-4 sm:px-12 mt-6 rounded-md hover:bg-[#761A48] hover:scale-105 active:scale-95 transition'>
+                            SHOP NOW
+                        </button>
                     </div>
-                    <Image className='sm:absolute bottom-0 right-0 md:right-10 w-full sm:max-w-sm' src={assets.hero_model_img} alt="" />
+
+                    {/* Product Image */}
+                    <Image
+                        className='absolute bottom-0 right-0 translate-x-[10%] sm:translate-x-0 object-contain drop-shadow-xl'
+                        src={assets.liptint}
+                        alt="Lip Tint"
+                        width={280}
+                        height={380}
+                    />
                 </div>
+
+                {/* RIGHT SIDE CARDS */}
                 <div className='flex flex-col md:flex-row xl:flex-col gap-5 w-full xl:max-w-sm text-sm text-slate-600'>
-                    <div className='flex-1 flex items-center justify-between w-full bg-orange-200 rounded-3xl p-6 px-8 group'>
+                    
+                    {/* CARD 1 */}
+                    <div className='flex-1 flex items-center justify-between bg-purple-200 rounded-3xl p-6 px-8 group'>
                         <div>
-                            <p className='text-3xl font-medium bg-gradient-to-r from-slate-800 to-[#FFAD51] bg-clip-text text-transparent max-w-40'>Best products</p>
-                            <p className='flex items-center gap-1 mt-4'>View more <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> </p>
+                            <p className='text-3xl font-semibold bg-gradient-to-r from-[#4A1C77] to-[#C882E8] bg-clip-text text-transparent max-w-40'>
+                                Best Sellers
+                            </p>
+                            <p className='flex items-center gap-1 mt-4 font-medium'>
+                                Shop Now 
+                                <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} />
+                            </p>
                         </div>
-                        <Image className='w-35' src={assets.hero_product_img1} alt="" />
+                        <Image
+                            className='w-24 sm:w-28 md:w-32 object-contain'
+                            src="/images/hero/serum.png"
+                            alt="Serum"
+                            width={120}
+                            height={120}
+                        />
                     </div>
-                    <div className='flex-1 flex items-center justify-between w-full bg-blue-200 rounded-3xl p-6 px-8 group'>
+
+                    {/* CARD 2 */}
+                    <div className='flex-1 flex items-center justify-between bg-blue-200 rounded-3xl p-6 px-8 group'>
                         <div>
-                            <p className='text-3xl font-medium bg-gradient-to-r from-slate-800 to-[#78B2FF] bg-clip-text text-transparent max-w-40'>20% discounts</p>
-                            <p className='flex items-center gap-1 mt-4'>View more <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> </p>
+                            <p className='text-3xl font-semibold bg-gradient-to-r from-[#21437F] to-[#7CCBFF] bg-clip-text text-transparent max-w-40'>
+                                Discount 20%
+                            </p>
+                            <p className='flex items-center gap-1 mt-4 font-medium'>
+                                Grab Deals 
+                                <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} />
+                            </p>
                         </div>
-                        <Image className='w-35' src={assets.hero_product_img2} alt="" />
+                        <Image
+                            className='w-24 sm:w-28 md:w-32 object-contain'
+                            src="/images/hero/daycream.png"
+                            alt="Day Cream"
+                            width={120}
+                            height={120}
+                        />
                     </div>
+
                 </div>
             </div>
+
             <CategoriesMarquee />
         </div>
-
     )
 }
 
