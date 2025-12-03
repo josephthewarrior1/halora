@@ -11,7 +11,16 @@ import { useDispatch, useSelector } from "react-redux";
 const ProductDetails = ({ product }) => {
 
     const productId = product.id;
-    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '$';
+
+    // Format harga untuk Rupiah (langsung format tanpa konversi karena udah dalam Rupiah)
+    const formatPrice = (price) => {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(price);
+    }
 
     const cart = useSelector(state => state.cart.cartItems);
     const dispatch = useDispatch();
@@ -25,6 +34,9 @@ const ProductDetails = ({ product }) => {
     }
 
     const averageRating = product.rating.reduce((acc, item) => acc + item.rating, 0) / product.rating.length;
+    
+    // Hitung persentase diskon
+    const discountPercentage = ((product.mrp - product.price) / product.mrp * 100).toFixed(0);
     
     return (
         <div className="flex max-lg:flex-col gap-12">
@@ -49,12 +61,12 @@ const ProductDetails = ({ product }) => {
                     <p className="text-sm ml-3 text-slate-500">{product.rating.length} Reviews</p>
                 </div>
                 <div className="flex items-start my-6 gap-3 text-2xl font-semibold text-slate-800">
-                    <p> {currency}{product.price} </p>
-                    <p className="text-xl text-slate-500 line-through">{currency}{product.mrp}</p>
+                    <p>{formatPrice(product.price)}</p>
+                    <p className="text-xl text-slate-500 line-through">{formatPrice(product.mrp)}</p>
                 </div>
                 <div className="flex items-center gap-2 text-slate-500">
                     <TagIcon size={14} />
-                    <p>Save {((product.mrp - product.price) / product.mrp * 100).toFixed(0)}% right now</p>
+                    <p>Save {discountPercentage}% right now</p>
                 </div>
                 <div className="flex items-end gap-5 mt-10">
                     {

@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Cart() {
-
-    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '$';
     
     const { cartItems } = useSelector(state => state.cart);
     const products = useSelector(state => state.product.list);
@@ -19,6 +17,16 @@ export default function Cart() {
 
     const [cartArray, setCartArray] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
+
+    // Format number to Rupiah
+    const formatRupiah = (number) => {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(number);
+    };
 
     const createCartArray = () => {
         setTotalPrice(0);
@@ -75,13 +83,13 @@ export default function Cart() {
                                             <div>
                                                 <p className="max-sm:text-sm">{item.name}</p>
                                                 <p className="text-xs text-slate-500">{item.category}</p>
-                                                <p>{currency}{item.price}</p>
+                                                <p className="font-medium">{formatRupiah(item.price)}</p>
                                             </div>
                                         </td>
                                         <td className="text-center">
                                             <Counter productId={item.id} />
                                         </td>
-                                        <td className="text-center">{currency}{(item.price * item.quantity).toLocaleString()}</td>
+                                        <td className="text-center font-medium">{formatRupiah(item.price * item.quantity)}</td>
                                         <td className="text-center max-md:hidden">
                                             <button onClick={() => handleDeleteItemFromCart(item.id)} className=" text-red-500 hover:bg-red-50 p-2.5 rounded-full active:scale-95 transition-all">
                                                 <Trash2Icon size={18} />

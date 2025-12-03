@@ -15,9 +15,19 @@ function ShopContent() {
     const products = useSelector(state => state.product.list)
 
     const [selectedCategories, setSelectedCategories] = useState([])
-    const [priceRange, setPriceRange] = useState([0, 200])
+    const [priceRange, setPriceRange] = useState([0, 3000000]) // Update ke Rupiah
     const [minRating, setMinRating] = useState(0)
     const [showMobileFilter, setShowMobileFilter] = useState(false)
+
+    // Format Rupiah
+    const formatRupiah = (number) => {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(number);
+    };
 
     // Filter logic
     const filteredProducts = products.filter(product => {
@@ -59,7 +69,7 @@ function ShopContent() {
 
     const clearFilters = () => {
         setSelectedCategories([])
-        setPriceRange([0, 200])
+        setPriceRange([0, 3000000]) // Reset ke max Rupiah
         setMinRating(0)
         if (search) router.push('/shop')
     }
@@ -123,6 +133,7 @@ function ShopContent() {
                             onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
                             className="w-full px-3 py-2 border border-slate-300 rounded-md text-sm"
                             placeholder="Min"
+                            step="50000"
                         />
                         <span className="text-slate-400">-</span>
                         <input
@@ -131,15 +142,21 @@ function ShopContent() {
                             onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
                             className="w-full px-3 py-2 border border-slate-300 rounded-md text-sm"
                             placeholder="Max"
+                            step="50000"
                         />
+                    </div>
+                    <div className="text-xs text-slate-500 flex justify-between">
+                        <span>{formatRupiah(priceRange[0])}</span>
+                        <span>{formatRupiah(priceRange[1])}</span>
                     </div>
                     <input
                         type="range"
                         min="0"
-                        max="200"
+                        max="3000000"
                         value={priceRange[1]}
                         onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
                         className="w-full accent-emerald-500"
+                        step="50000"
                     />
                 </div>
             </div>

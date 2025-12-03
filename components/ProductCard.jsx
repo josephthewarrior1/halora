@@ -6,14 +6,24 @@ import React from 'react'
 
 const ProductCard = ({ product }) => {
 
-    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '$'
+    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || 'Rp'
 
     // calculate the average rating of the product
     const rating = Math.round(product.rating.reduce((acc, curr) => acc + curr.rating, 0) / product.rating.length);
 
+    // Format harga untuk Rupiah (langsung format tanpa konversi karena udah dalam Rupiah)
+    const formatPrice = (price) => {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(price);
+    }
+
     return (
-        <Link href={`/product/${product.id}`} className=' group max-xl:mx-auto'>
-            <div className='bg-[#F5F5F5] h-40  sm:w-60 sm:h-68 rounded-lg flex items-center justify-center'>
+        <Link href={`/product/${product.id}`} className='group max-xl:mx-auto'>
+            <div className='bg-[#F5F5F5] h-40 sm:w-60 sm:h-68 rounded-lg flex items-center justify-center'>
                 <Image width={500} height={500} className='max-h-30 sm:max-h-40 w-auto group-hover:scale-115 transition duration-300' src={product.images[0]} alt="" />
             </div>
             <div className='flex justify-between gap-3 text-sm text-slate-800 pt-2 max-w-60'>
@@ -25,7 +35,7 @@ const ProductCard = ({ product }) => {
                         ))}
                     </div>
                 </div>
-                <p>{currency}{product.price}</p>
+                <p className='whitespace-nowrap'>{formatPrice(product.price)}</p>
             </div>
         </Link>
     )
