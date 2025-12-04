@@ -77,10 +77,10 @@ const Hero = () => {
                         </div>
                         <Image
                             className='w-24 sm:w-28 md:w-32 object-contain'
-                            src="/images/hero/serum.png"
+                            src={assets.serum}
                             alt="Serum"
-                            width={120}
-                            height={120}
+                            width={250}
+                            height={250}
                         />
                     </div>
 
@@ -100,7 +100,7 @@ const Hero = () => {
                         </div>
                         <Image
                             className='w-24 sm:w-28 md:w-32 object-contain'
-                            src="/images/hero/daycream.png"
+                            src={assets.vaseline}
                             alt="Day Cream"
                             width={120}
                             height={120}
