@@ -13,6 +13,11 @@ const OrderItem = ({ order }) => {
 
     const { ratings } = useSelector(state => state.rating);
 
+    // Fungsi untuk format harga dengan pemisah ribuan
+    const formatPrice = (price) => {
+        return new Intl.NumberFormat('id-ID').format(price);
+    };
+
     return (
         <>
             <tr className="text-sm">
@@ -31,7 +36,7 @@ const OrderItem = ({ order }) => {
                                 </div>
                                 <div className="flex flex-col justify-center text-sm">
                                     <p className="font-medium text-slate-600 text-base">{item.product.name}</p>
-                                    <p>{currency}{item.price} Qty : {item.quantity} </p>
+                                    <p>{currency}{formatPrice(item.price)} Qty : {item.quantity} </p>
                                     <p className="mb-1">{new Date(order.createdAt).toDateString()}</p>
                                     <div>
                                         {ratings.find(rating => order.id === rating.orderId && item.product.id === rating.productId)
@@ -45,7 +50,7 @@ const OrderItem = ({ order }) => {
                     </div>
                 </td>
 
-                <td className="text-center max-md:hidden">{currency}{order.total}</td>
+                <td className="text-center max-md:hidden">{currency}{formatPrice(order.total)}</td>
 
                 <td className="text-left max-md:hidden">
                     <p>{order.address.name}, {order.address.street},</p>
@@ -55,9 +60,9 @@ const OrderItem = ({ order }) => {
 
                 <td className="text-left space-y-2 text-sm max-md:hidden">
                     <div
-                        className={`flex items-center justify-center gap-1 rounded-full p-1 ${order.status === 'confirmed'
+                        className={`flex items-center justify-center gap-1 rounded-full p-1 ${order.status === 'CONFIRMED'
                             ? 'text-yellow-500 bg-yellow-100'
-                            : order.status === 'delivered'
+                            : order.status === 'DELIVERED'
                                 ? 'text-green-500 bg-green-100'
                                 : 'text-slate-500 bg-slate-100'
                             }`}
