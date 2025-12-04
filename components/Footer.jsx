@@ -14,27 +14,27 @@ const Footer = () => {
         {
             title: "PRODUCTS",
             links: [
-                { text: "Earphones", path: '/', icon: null },
-                { text: "Headphones", path: '/', icon: null },
-                { text: "Smartphones", path: '/', icon: null },
-                { text: "Laptops", path: '/', icon: null },
+                { text: "Serum", path: '/shop', icon: null },
+                { text: "Moisturizer", path: '/shop', icon: null },
+                { text: "Facial Wash", path: '/shop', icon: null },
+                { text: "Sunscreen", path: '/shop', icon: null },
             ]
         },
         {
-            title: "WEBSITE?",
+            title: "WEBSITE",
             links: [
                 { text: "Home", path: '/', icon: null },
-                { text: "Privacy Policy", path: '/', icon: null },
-                { text: "Become Plus Member", path: '/pricing', icon: null },
-                { text: "Create Your Store", path: '/create-store', icon: null },
+                { text: "Shop", path: '/shop', icon: null },
+                { text: "About", path: '/', icon: null },
+                { text: "Contact", path: '/', icon: null },
             ]
         },
         {
             title: "CONTACT",
             links: [
-                { text: "+1-212-456-7890", path: '/', icon: MailIcon },
-                { text: "contact@example.com", path: '/', icon: PhoneIcon },
-                { text: "794 Francisco, 94102", path: '/', icon: MapPinIcon }
+                { text: "contact@halora.com", path: 'mailto:contact@halora.com', icon: MailIcon },
+                { text: "+62 812-3456-7890", path: 'tel:+6281234567890', icon: PhoneIcon },
+                { text: "Jakarta, Indonesia", path: '/', icon: MapPinIcon }
             ]
         }
     ];
@@ -51,13 +51,13 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-slate-500/30 text-slate-500">
                     <div>
-                        <Link href="/" className="text-4xl font-semibold text-slate-700">
-                            <span className="text-green-600">go</span>cart<span className="text-green-600 text-5xl leading-0">.</span>
+                        <Link href="/" className="text-4xl font-semibold" style={{ color: '#84a685' }}>
+                            Halora
                         </Link>
-                        <p className="max-w-[410px] mt-6 text-sm">Welcome to gocart, your ultimate destination for the latest and smartest gadgets. From smartphones and smartwatches to essential accessories, we bring you the best in innovation — all in one place.</p>
+                        <p className="max-w-[410px] mt-6 text-sm">Welcome to Halora, your ultimate destination for premium skincare and beauty products. From serums and moisturizers to essential skincare accessories, we bring you the best in beauty innovation — all in one place.</p>
                         <div className="flex items-center gap-3 mt-5">
                             {socialIcons.map((item, i) => (
-                                <Link href={item.link} key={i} className="flex items-center justify-center w-10 h-10 bg-slate-100 hover:scale-105 hover:border border-slate-300 transition rounded-full">
+                                <Link href={item.link} key={i} className="flex items-center justify-center w-10 h-10 bg-slate-100 hover:scale-105 hover:border transition rounded-full" style={{ borderColor: '#84a685' }}>
                                     <item.icon />
                                 </Link>
                             ))}
@@ -80,7 +80,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <p className="py-4 text-sm text-slate-500">
-                    Copyright 2025 © gocart All Right Reserved.
+                    Copyright 2025 © Halora All Right Reserved.
                 </p>
             </div>
         </footer>
