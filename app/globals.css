@@ -15,6 +15,17 @@
     button {
         cursor: pointer;
     }
+    
+    /* Background pink untuk semua page */
+    body {
+        background-color: #FFE4E1; /* Misty Rose - pink muda */
+        /* atau pilih warna pink lain:
+        background-color: #FFB6C1; - Light Pink
+        background-color: #FFC0CB; - Pink
+        background-color: #FFD1DC; - Pink Lace
+        background-color: #FFF0F5; - Lavender Blush (pink super soft)
+        */
+    }
 }
 
 .no-scrollbar::-webkit-scrollbar {

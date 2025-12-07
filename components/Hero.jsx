@@ -37,7 +37,7 @@ const Hero = () => {
                         </p>
 
                         <p className='text-3xl font-bold mt-1'>
-                            {currency} 19.000
+                            {currency} 100.000
                         </p>
 
                         <button 
