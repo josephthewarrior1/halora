@@ -23,13 +23,29 @@ import profile_pic3 from "./profile_pic3.jpg"
 import liptint from "./liptint.png"
 import serum from "./serum.png"
 import vaseline from "./vaseline.png"
+import advancedsnail from "./advancesnail.png"
+import White_Truffle from "./White_Truffle.png"
+import labore_sensitive from "./labore_sensitive.png"
+import keana_mask from "./keana_mask.png"
+import Cica from "./Cica.png"
+import Centella from "./Centella.png"
+import anessa_sunscreen from "./anessa_sunscreen.png"
+import azarine_sunscreen from "./azarine_sunscreen.png"
+import skintific_sunscreen from "./skintific_sunscreen.png"
+import skincare from "./skincare.jpg"
+import about1 from "./about1.jpg"
+import loreal_oilgold from "./loreal_oilgold.png"
+import makarizo_jelly from "./makarizo_jelly.png"
+import makarizo_hair_energy from "./makarizo_hair_energy.png"
 
 
 export const assets = {
     upload_area, hero_model_img,
     hero_product_img1, hero_product_img2, gs_logo,
     product_img1, product_img2, product_img3, product_img4, product_img5, product_img6,
-    product_img7, product_img8, product_img9, product_img10, product_img11, product_img12, liptint, serum, vaseline
+    product_img7, product_img8, product_img9, product_img10, product_img11, product_img12, 
+    liptint, serum, vaseline, advancedsnail, White_Truffle, labore_sensitive, keana_mask, Cica, Centella, anessa_sunscreen, azarine_sunscreen, skintific_sunscreen,
+    skincare, about1, loreal_oilgold, makarizo_jelly, makarizo_hair_energy
 }
 
 export const categories = ["Serum", "Moisturizer", "Facial Wash", "Toner", "Sunscreen", "Sheet Mask", "Cleansing Oil", "Hair Care"];
@@ -245,6 +261,190 @@ export const productDummyData = [
         rating: [...dummyRatingsData,...dummyRatingsData],
         createdAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)',
         updatedAt: 'Sat Jul 19 2025 14:51:25 GMT+0530 (India Standard Time)',
+    },
+    // New Products Added Below
+    {
+        id: "prod_13",
+        name: "Advanced Snail 92 All in One Cream",
+        description: "Advanced Snail 92 All in One Cream with 92% snail secretion filtrate. It's perfect for all skin types, providing intense hydration, soothing irritation, and improving skin elasticity. This multi-functional cream repairs damaged skin and enhances skin barrier function for a radiant, healthy complexion.",
+        mrp: 250000,
+        price: 207270,
+        images: [advancedsnail],
+        category: "Moisturizer",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 01 2025 10:30:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 01 2025 10:30:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_14",
+        name: "d'Alba White Truffle First Spray Serum",
+        description: "d'Alba White Truffle First Spray Serum with white truffle extract and caviar. It's perfect for providing intense nutrition and anti-aging benefits. This innovative spray serum delivers hydration and nourishment in a lightweight mist form, improving skin texture and elasticity while providing a radiant glow.",
+        mrp: 200000,
+        price: 176000,
+        images: [White_Truffle],
+        category: "Moisturizer",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 01 2025 11:15:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 01 2025 11:15:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_15",
+        name: "Labore Sensitive Skin Care BiomeRepair Barrier Revive Cream",
+        description: "Labore Sensitive Skin Care BiomeRepair Barrier Revive Cream with biome-friendly formula. It's perfect for sensitive skin, providing barrier repair and calming effects. This cream strengthens the skin's natural defense system, soothes irritation, and maintains optimal moisture balance for healthy, resilient skin.",
+        mrp: 250000,
+        price: 210000,
+        images: [labore_sensitive],
+        category: "Moisturizer",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 01 2025 12:00:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 01 2025 12:00:25 GMT+0530 (India Standard Time)',
+    },
+    // New Sheet Mask Products Added Below
+    {
+        id: "prod_16",
+        name: "Cica Acne Care Complex Treatment Face Essence Sheet Mask",
+        description: "Cica Acne Care Complex Treatment Face Essence Sheet Mask with Centella Asiatica and acne-fighting complex. It's perfect for acne-prone and sensitive skin, providing soothing relief while targeting blemishes. This sheet mask calms inflammation, reduces redness, and helps prevent future breakouts for clearer, healthier-looking skin.",
+        mrp: 20000,
+        price: 16900,
+        images: [Cica],
+        category: "Sheet Mask",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 02 2025 09:30:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 02 2025 09:30:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_17",
+        name: "Centella Niacin Ampoule Mask",
+        description: "Centella Niacin Ampoule Mask with concentrated Centella Asiatica and Niacinamide. It's perfect for soothing irritated skin and improving skin barrier function. This ampoule-infused sheet mask delivers intense hydration, reduces redness, and brightens skin tone while providing antioxidant protection for a revitalized complexion.",
+        mrp: 35000,
+        price: 28000,
+        images: [Centella],
+        category: "Sheet Mask",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 02 2025 10:15:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 02 2025 10:15:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_18",
+        name: "KEANA Tightening Mask",
+        description: "KEANA Tightening Mask with rice ferment filtrate and tightening complex. It's perfect for firming and lifting sagging skin. This 10-sheet mask pack provides instant tightening effect, improves skin elasticity, and refines pores for a more youthful and lifted appearance. Ideal for daily use to maintain skin firmness.",
+        mrp: 150000,
+        price: 115000,
+        images: [keana_mask],
+        category: "Sheet Mask",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 02 2025 11:00:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 02 2025 11:00:25 GMT+0530 (India Standard Time)',
+    },
+    // New Sunscreen Products Added Below
+    {
+        id: "prod_19",
+        name: "Azarine Hydrashoothe Sunscreen Gel SPF45+++",
+        description: "Azarine Hydrashoothe Sunscreen Gel with SPF45+++ protection and lightweight gel texture. It's perfect for daily sun protection with a non-greasy finish. Made with hydrating ingredients that soothe and moisturize skin while providing broad-spectrum protection against UVA/UVB rays. Ideal for all skin types, especially oily and combination skin.",
+        mrp: 80000,
+        price: 65000,
+        images: [azarine_sunscreen],
+        category: "Sunscreen",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 03 2025 09:00:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 03 2025 09:00:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_20",
+        name: "Skintific All Day Light Sunscreen Mist SPF 50 PA++++",
+        description: "Skintific All Day Light Sunscreen Mist with SPF 50 and PA++++ maximum protection. It's perfect for convenient sun protection with easy application. This lightweight mist provides broad-spectrum coverage without leaving a white cast or sticky feeling. Ideal for touch-ups throughout the day and suitable for all skin types.",
+        mrp: 90000,
+        price: 72150,
+        images: [skintific_sunscreen],
+        category: "Sunscreen",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 03 2025 10:30:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 03 2025 10:30:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_21",
+        name: "Anessa New Perfect UV Sunscreen Skincare Milk",
+        description: "Anessa New Perfect UV Sunscreen Skincare Milk with advanced UV protection technology. It's perfect for long-lasting sun protection with skincare benefits. This milky texture provides SPF50+ PA++++ protection while moisturizing and brightening the skin. Water-resistant and suitable for daily use, even during outdoor activities.",
+        mrp: 250000,
+        price: 190000,
+        images: [anessa_sunscreen],
+        category: "Sunscreen",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 03 2025 11:45:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 03 2025 11:45:25 GMT+0530 (India Standard Time)',
+    },
+    // New Hair Care Products Added Below
+    {
+        id: "prod_22",
+        name: "Loreal Paris Extraordinary Oil Gold",
+        description: "L'Oreal Paris Extraordinary Oil Gold with precious golden oils and nourishing formula. It's perfect for transforming dry, damaged hair into silky, shiny locks. This luxurious hair oil provides intense hydration, reduces frizz, and adds brilliant shine without weighing hair down. Suitable for all hair types seeking premium care and radiance.",
+        mrp: 200000,
+        price: 156400,
+        images: [loreal_oilgold],
+        category: "Hair Care",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 04 2025 09:30:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 04 2025 09:30:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_23",
+        name: "Makarizo Hair Energy Scentsations Hair Fragrance",
+        description: "Makarizo Hair Energy Scentsations Hair Fragrance with long-lasting refreshing scent. It's perfect for adding a delightful fragrance to hair while providing light conditioning. This hair perfume eliminates unwanted odors, leaves hair smelling fresh all day, and adds a subtle shine. Ideal for daily use to maintain fragrant, fresh-smelling hair.",
+        mrp: 35000,
+        price: 32000,
+        images: [makarizo_hair_energy],
+        category: "Hair Care",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 04 2025 10:15:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 04 2025 10:15:25 GMT+0530 (India Standard Time)',
+    },
+    {
+        id: "prod_24",
+        name: "Makarizo Hair Energy Fibertherapy Hair & Scalp Creambath Royal Jelly",
+        description: "Makarizo Hair Energy Fibertherapy Hair & Scalp Creambath with Royal Jelly extract. It's perfect for intensive hair and scalp treatment. This creambath formula nourishes hair follicles, strengthens hair strands, and revitalizes the scalp. It repairs damaged hair, promotes healthy growth, and leaves hair soft, manageable, and full of life.",
+        mrp: 120000,
+        price: 101000,
+        images: [makarizo_jelly],
+        category: "Hair Care",
+        storeId: "seller_1",
+        inStock: true,
+        store: dummyStoreData,
+        rating: [...dummyRatingsData,...dummyRatingsData],
+        createdAt: 'Sat Aug 04 2025 11:00:25 GMT+0530 (India Standard Time)',
+        updatedAt: 'Sat Aug 04 2025 11:00:25 GMT+0530 (India Standard Time)',
     }
 ];
 
@@ -366,7 +566,7 @@ export const storesDummyData = [
 export const dummyAdminDashboardData = {
     "orders": 6,
     "stores": 2,
-    "products": 12,
+    "products": 24, // Updated from 21 to 24
     "revenue": "8940000",
     "allOrders": [
         { "createdAt": "2025-08-20T08:46:58.239Z", "total": 548000 },
@@ -392,5 +592,5 @@ export const dummyStoreDashboardData = {
     "ratings": dummyRatingsData,
     "totalOrders": 2,
     "totalEarnings": 3835000,
-    "totalProducts": 5
+    "totalProducts": 17 // Updated from 14 to 17 (including the 3 new hair care products)
 }

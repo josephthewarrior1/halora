@@ -2,6 +2,7 @@
 import { Heart, Shield, Leaf, Star, Users, Award, TrendingUp, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { assets } from '@/assets/assets'
 
 const About = () => {
     const router = useRouter()
@@ -15,7 +16,7 @@ const About = () => {
                             About Our Brand
                         </h1>
                         <p className="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                            Kami adalah pioneer dalam industri halal beauty di Indonesia, berkomitmen untuk menghadirkan produk kecantikan berkualitas tinggi yang aman, halal, dan terjangkau untuk semua.
+                            We are pioneers in Indonesia's halal beauty industry, committed to delivering high-quality beauty products that are safe, halal-certified, and affordable for everyone.
                         </p>
                     </div>
                 </div>
@@ -31,25 +32,27 @@ const About = () => {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-6">
-                                Cerita Kami
+                                Our Story
                             </h2>
                             <p className="text-slate-600 mb-4 leading-relaxed">
-                                Dimulai pada tahun 2020, kami lahir dari sebuah visi sederhana namun kuat: setiap wanita muslimah berhak mendapatkan produk kecantikan yang tidak hanya membuat mereka tampil cantik, tapi juga sejalan dengan nilai-nilai dan keyakinan mereka.
+                                Founded in 2020, we were born from a simple yet powerful vision: every Muslim woman deserves beauty products that not only make them look beautiful but also align with their values and beliefs.
                             </p>
                             <p className="text-slate-600 mb-4 leading-relaxed">
-                                Kami memahami bahwa kecantikan bukan hanya tentang penampilan luar, tetapi juga tentang merasa percaya diri dan nyaman dengan pilihan yang kita buat. Itulah mengapa setiap produk kami telah tersertifikasi halal dan diproduksi dengan bahan-bahan alami berkualitas tinggi.
+                                We understand that beauty isn't just about outward appearance, but also about feeling confident and comfortable with the choices we make. That's why every product we create is halal-certified and made with high-quality natural ingredients.
                             </p>
                             <p className="text-slate-600 leading-relaxed">
-                                Dari skincare hingga makeup, kami terus berinovasi untuk menghadirkan produk yang tidak hanya efektif, tetapi juga aman untuk kulit sensitif Indonesia yang terpapar iklim tropis.
+                                From skincare to makeup, we continuously innovate to bring products that are not only effective but also safe for Indonesia's sensitive skin exposed to tropical climates.
                             </p>
                         </div>
                         <div className="relative">
-                            <div className="bg-gradient-to-br from-pink-300 to-purple-300 rounded-3xl p-8 aspect-square flex items-center justify-center">
-                                <div className="text-center">
-                                    <Sparkles size={80} className="text-white mx-auto mb-4" />
-                                    <p className="text-white text-2xl font-bold">4+ Years</p>
-                                    <p className="text-white/90">Melayani Indonesia</p>
-                                </div>
+                            <div className="rounded-3xl overflow-hidden aspect-square">
+                                <Image 
+                                    src={assets.skincare}
+                                    alt="Skincare Products" 
+                                    className="w-full h-full object-cover"
+                                    width={600}
+                                    height={600}
+                                />
                             </div>
                         </div>
                     </div>
@@ -61,10 +64,10 @@ const About = () => {
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-4">
-                            Nilai-Nilai Kami
+                            Our Values
                         </h2>
                         <p className="text-slate-600 max-w-2xl mx-auto">
-                            Prinsip yang menjadi fondasi setiap keputusan dan produk yang kami ciptakan
+                            Principles that form the foundation of every decision and product we create
                         </p>
                     </div>
 
@@ -73,22 +76,22 @@ const About = () => {
                             {
                                 icon: Shield,
                                 title: "100% Halal",
-                                description: "Semua produk tersertifikasi halal oleh MUI dan lembaga internasional"
+                                description: "All products are halal-certified by MUI and international organizations"
                             },
                             {
                                 icon: Leaf,
                                 title: "Natural Ingredients",
-                                description: "Menggunakan bahan alami pilihan yang aman untuk kulit"
+                                description: "Using carefully selected natural ingredients that are safe for skin"
                             },
                             {
                                 icon: Heart,
                                 title: "Cruelty Free",
-                                description: "Tidak ada testing pada hewan dalam proses produksi"
+                                description: "No animal testing in our production process"
                             },
                             {
                                 icon: Star,
                                 title: "Premium Quality",
-                                description: "Kualitas premium dengan harga yang terjangkau"
+                                description: "Premium quality at affordable prices"
                             }
                         ].map((value, index) => (
                             <div key={index} className="bg-pink-50 p-6 rounded-2xl hover:shadow-lg transition-shadow">
@@ -114,7 +117,7 @@ const About = () => {
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
                                 { icon: Users, number: "100K+", label: "Happy Customers" },
-                                { icon: Award, number: "50+", label: "Produk Tersedia" },
+                                { icon: Award, number: "50+", label: "Available Products" },
                                 { icon: TrendingUp, number: "98%", label: "Satisfaction Rate" },
                                 { icon: Star, number: "4.8/5", label: "Average Rating" }
                             ].map((stat, index) => (
@@ -140,32 +143,34 @@ const About = () => {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="order-2 lg:order-1">
-                            <div className="bg-gradient-to-br from-purple-300 to-pink-300 rounded-3xl p-8 aspect-square flex items-center justify-center">
-                                <div className="text-center">
-                                    <Heart size={80} className="text-white mx-auto mb-4" />
-                                    <p className="text-white text-xl font-semibold">Halal Beauty</p>
-                                    <p className="text-white/90 mt-2">For Everyone</p>
-                                </div>
+                            <div className="rounded-3xl overflow-hidden aspect-square">
+                                <Image 
+                                    src={assets.about1}
+                                    alt="Halal Beauty Products" 
+                                    className="w-full h-full object-cover"
+                                    width={600}
+                                    height={600}
+                                />
                             </div>
                         </div>
                         <div className="order-1 lg:order-2">
                             <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-6">
-                                Misi Kami
+                                Our Mission
                             </h2>
                             <p className="text-slate-600 mb-4 leading-relaxed">
-                                Kami berkomitmen untuk membuat produk halal beauty accessible untuk semua kalangan. Tidak peduli usia, tipe kulit, atau budget, setiap orang berhak mendapatkan produk berkualitas yang membuat mereka merasa cantik dan percaya diri.
+                                We are committed to making halal beauty products accessible to everyone. Regardless of age, skin type, or budget, everyone deserves quality products that make them feel beautiful and confident.
                             </p>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                Dengan terus melakukan riset dan inovasi, kami berusaha menghadirkan formula terbaru yang menggabungkan teknologi modern dengan wisdom tradisional, menciptakan produk yang truly works untuk kulit Indonesia.
+                                Through continuous research and innovation, we strive to deliver cutting-edge formulas that combine modern technology with traditional wisdom, creating products that truly work for Indonesian skin.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <div className="flex-1 bg-pink-50 p-4 rounded-xl">
-                                    <p className="text-2xl font-bold text-[#8C2155] mb-1">Inovasi</p>
-                                    <p className="text-sm text-slate-600">Terus berkembang dengan riset</p>
+                                    <p className="text-2xl font-bold text-[#8C2155] mb-1">Innovation</p>
+                                    <p className="text-sm text-slate-600">Continuously evolving through research</p>
                                 </div>
                                 <div className="flex-1 bg-pink-50 p-4 rounded-xl">
-                                    <p className="text-2xl font-bold text-[#8C2155] mb-1">Kualitas</p>
-                                    <p className="text-sm text-slate-600">Standard internasional</p>
+                                    <p className="text-2xl font-bold text-[#8C2155] mb-1">Quality</p>
+                                    <p className="text-sm text-slate-600">International standards</p>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +185,7 @@ const About = () => {
                         Join Our Beauty Journey
                     </h2>
                     <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-                        Bergabunglah dengan ribuan wanita Indonesia yang sudah merasakan manfaat produk halal beauty kami. Mulai perjalanan kecantikan alami kamu hari ini!
+                        Join thousands of Indonesian women who have already experienced the benefits of our halal beauty products. Start your natural beauty journey today!
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <button 
